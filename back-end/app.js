@@ -78,5 +78,19 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+// a route to handle fetching the About Us page content
+app.get('/about', (req, res) => {
+  res.json({
+    heading: 'About Us',
+    paragraphs: [
+      'Hi, I\'m Saun Chen, a Computer Science senior at NYU, originally from Beijing.',
+      'After an AI Product Management internship, I\'m set on becoming an AI product builder — someone who combines technical skills with product and business thinking.',
+      'My focus is on AI agents for sales and advertising: how autonomous systems can transform customer discovery, outreach, and ad optimization. I care as much about the operational and business side as the technology itself, and I\'m always pushing to expand my skills across the full stack — from model behavior to market fit.',
+    ],
+    imageUrl: 'https://raw.githubusercontent.com/agile-students-spring2026/2-mern-preview-saunchen/master/front-end/public/photo.jpg',
+    imageAlt: 'Saun Chen',
+  })
+})
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
